@@ -1,0 +1,13 @@
+{% extends 'Polls/Base.html' %}
+{% block main_content %}
+<h2 class="">Choose a Poll!!</h2>
+<br>
+<br>
+    {% if questions %}
+        <ul>
+        {% for q in questions %}
+            <li> <a style="font-size: large;" href= "{% url 'Polls:details' q.id %}"> <b> {{ q.question_text }} </b> </a> </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
